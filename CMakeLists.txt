@@ -22,7 +22,11 @@ cmake_policy(SET CMP0009 NEW)
 # =================================================================
 # Source Files (.cpp files)
 # =================================================================
-file(GLOB_RECURSE SOURCE_FILES "${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp")
+file(GLOB_RECURSE SOURCE_FILES "${CMAKE_CURRENT_SOURCE_DIR}/src/lib_json/*.cpp")
+
+foreach(file ${SOURCE_FILES})
+	message("    ${file}")
+endforeach(file)
 
 # =================================================================
 # Include directories (containing .h files)
@@ -52,3 +56,7 @@ INSTALL(TARGETS JsonCpp
         RUNTIME DESTINATION bin
         LIBRARY DESTINATION lib
         ARCHIVE DESTINATION lib)
+
+message("====================================")
+message("Finished JsonCpp")
+message("====================================")
